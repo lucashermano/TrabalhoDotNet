@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Anatel;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting;
 using System.ServiceModel;
-using System.Threading.Tasks;
 using APT;
 using KGB;
 

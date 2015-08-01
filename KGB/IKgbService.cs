@@ -1,11 +1,10 @@
-﻿using System;
+﻿using ModeloCanonico;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.Text;
-using ModeloCanonico;
 
 namespace KGB
 {
@@ -13,15 +12,12 @@ namespace KGB
     [ServiceContract]
     public interface IKgbService
     {
-
         [OperationContract]
         Custumer ObterStatusFinanceiroCliente(string cpf);
         [OperationContract]
         Custumer GetCustomerByCPF(string cpf);
         [OperationContract]
         Acount ObterDadosConta(Custumer customer);
-      
     }
-
-     
+    
 }

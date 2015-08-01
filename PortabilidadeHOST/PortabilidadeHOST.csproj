@@ -58,7 +58,7 @@
       <Name>APT</Name>
     </ProjectReference>
     <ProjectReference Include="..\KGB\KGB.csproj">
-      <Project>{ece5a5af-e294-4350-b446-aecf600dc3a8}</Project>
+      <Project>{79a03dc4-9353-41ea-b6bc-677a435599ee}</Project>
       <Name>KGB</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModeloCanonico\ModeloCanonico.csproj">

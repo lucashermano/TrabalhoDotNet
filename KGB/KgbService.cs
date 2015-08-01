@@ -1,15 +1,16 @@
-﻿using System;
+﻿using ModeloCanonico;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using ModeloCanonico;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
 
 namespace KGB
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class KgbService : IKgbService
     {
-
         public Custumer ObterStatusFinanceiroCliente(string cpf)
         {
             //• Operação que retorna o status financeiro do cliente a partir de um dado CPF de
