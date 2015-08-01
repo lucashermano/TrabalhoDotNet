@@ -10,6 +10,7 @@ namespace ModeloCanonico
     * Utilizada pelo projeto APT como contrato de falha, repassando assim para o projeto INOVIX os erros que aconteceram durante sua execução.
     *
     */
+    [Serializable]
     [DataContract(Namespace = "http://br.pucminas")]
     public class PortabilidadeFault
     {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b56e9139-768b-42d9-ae42-189a61ae53f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/AptService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="854ae187-64a8-4880-94cf-c650755ce2d5" SourceId="1" SourceUrl="http://localhost:8733/AptService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="02e1530c-e3e0-44ea-83b7-095e61678df6" SourceId="1" SourceUrl="http://localhost:8733/AptService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="265edaf1-72a0-4e59-9ef6-de7599e1a14b" SourceId="1" SourceUrl="http://localhost:8733/AptService/mex" />
+    <MetadataFile FileName="ModeloCanonico.xsd" MetadataType="Schema" ID="ad0c0ea7-ea77-4286-8663-70605deefcbc" SourceId="1" SourceUrl="http://localhost:8733/AptService/mex" />
+    <MetadataFile FileName="br.pucminas.xsd" MetadataType="Schema" ID="c00896c4-3b35-460e-9a57-3ba106aa2e27" SourceId="1" SourceUrl="http://localhost:8733/AptService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

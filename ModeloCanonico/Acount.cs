@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ModeloCanonico
 {
+    [Serializable]
     public class Acount
     {
         string number;

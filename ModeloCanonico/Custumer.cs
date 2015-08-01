@@ -6,6 +6,7 @@ using System.Text;
 namespace ModeloCanonico
 {
 
+    [Serializable]
     public class Custumer
     {
         string nome;

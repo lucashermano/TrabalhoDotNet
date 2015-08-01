@@ -9,6 +9,7 @@ namespace ModeloCanonico
     * Retorno portabilidade utilizado pelo webservice do projeto Anatel.
     *
     */
+    [Serializable]
     public class RetornoPortabilidade
     {
 

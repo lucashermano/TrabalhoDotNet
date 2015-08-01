@@ -27,7 +27,10 @@ namespace KGB
             //• Validar se o dado é válido
             //• CPF obrigatório
             //• Usar ASMX
-            throw new NotImplementedException();
+
+            Custumer custumer = new Custumer();
+            custumer.Nome = "Lucas - "+ cpf;
+            return custumer;
         }
 
         public Acount ObterDadosConta(Custumer customer)

@@ -31,7 +31,7 @@ namespace PortabilidadeHOST
         private static void iniciarServicoAPT()
         {
             //mesmo configurando o serviço igual as aulas, o servico não inicia na url localhost:9090
-            //somente no endereço http://localhost:8733/Design_Time_Addresses/APT/AptService/
+            //somente no endereço http://localhost:8733/AptService/
             using (ServiceHost host = new ServiceHost(typeof(AptService)))
             {
                 host.Open();
