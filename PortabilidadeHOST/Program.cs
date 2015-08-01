@@ -9,6 +9,7 @@ using System.Runtime.Remoting;
 using System.ServiceModel;
 using System.Threading.Tasks;
 using APT;
+using KGB;
 
 namespace PortabilidadeHOST
 {
@@ -18,8 +19,18 @@ namespace PortabilidadeHOST
         {
             iniciarServicoAnatel();
             iniciarServicoAPT();
+            iniciarServicoKGB();
             Console.Read();
 
+        }
+
+        private static void iniciarServicoKGB()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(KgbService)))
+            {
+                host.Open();
+                Console.WriteLine("Serviço KGB iniciado @ " + DateTime.Now);
+            }
         }
 
         private static void iniciarServicoAPT()

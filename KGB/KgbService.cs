@@ -12,16 +12,29 @@ namespace KGB
 
         public Custumer ObterStatusFinanceiroCliente(string cpf)
         {
+            //• Operação que retorna o status financeiro do cliente a partir de um dado CPF de
+            //entrada.
+            //• Validar se o dado é válido
+            //• CPF obrigatório
+            //• Usar WCF
             throw new NotImplementedException();
         }
 
         public Custumer GetCustomerByCPF(string cpf)
         {
+            //• Operação que retorna o cliente a partir de um dado CPF de entrada.
+            //• Validar se o dado é válido
+            //• CPF obrigatório
+            //• Usar ASMX
             throw new NotImplementedException();
         }
 
         public Acount ObterDadosConta(Custumer customer)
         {
+            //• Operação que retorna a conta de um cliente
+            //• Validar se o dado é válido
+            //• Customer obrigatório
+            //• Usar WCF
             throw new NotImplementedException();
         }
     }
