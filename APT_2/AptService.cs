@@ -8,7 +8,7 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting;
 using System.ServiceModel;
 
-namespace APT_2
+namespace APT
 {
     public class AptService: IAptService
     {

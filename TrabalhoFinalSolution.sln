@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YUM", "YUM\YUM.csproj", "{43443AD9-8530-40AA-824F-97F82AEE9BD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KGB", "KGB\KGB.csproj", "{ECE5A5AF-E294-4350-B446-AECF600DC3A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APT", "APT\APT.csproj", "{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INOVIX", "INOVIX\INOVIX.csproj", "{BBDD4ED8-516A-447F-9B10-31679DA83153}"
 EndProject
@@ -17,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloCanonico", "ModeloCan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatel", "Anatel\Anatel.csproj", "{601D2F52-95E7-471D-80FF-551786AB73F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APT_2", "APT_2\APT_2.csproj", "{AE6D82C0-0BF2-486B-B05F-5F9A95CAB4AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APT", "APT_2\APT.csproj", "{AE6D82C0-0BF2-486B-B05F-5F9A95CAB4AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,16 +47,6 @@ Global
 		{ECE5A5AF-E294-4350-B446-AECF600DC3A8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{ECE5A5AF-E294-4350-B446-AECF600DC3A8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{ECE5A5AF-E294-4350-B446-AECF600DC3A8}.Release|x86.ActiveCfg = Release|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C6CCD14D-F87D-49FC-B365-A5E971EC5BBD}.Release|x86.ActiveCfg = Release|Any CPU
 		{BBDD4ED8-516A-447F-9B10-31679DA83153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBDD4ED8-516A-447F-9B10-31679DA83153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBDD4ED8-516A-447F-9B10-31679DA83153}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU

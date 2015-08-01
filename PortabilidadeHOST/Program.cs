@@ -8,7 +8,7 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting;
 using System.ServiceModel;
 using System.Threading.Tasks;
-using APT_2;
+using APT;
 
 namespace PortabilidadeHOST
 {
@@ -25,7 +25,7 @@ namespace PortabilidadeHOST
         private static void iniciarServicoAPT()
         {
             //mesmo configurando o serviço igual as aulas, o servico não inicia na url localhost:9090
-            //somente no endereço http://localhost:8733/Design_Time_Addresses/APT_2/AptService/
+            //somente no endereço http://localhost:8733/Design_Time_Addresses/APT/AptService/
             using (ServiceHost host = new ServiceHost(typeof(AptService)))
             {
                 host.Open();
