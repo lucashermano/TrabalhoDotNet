@@ -16,5 +16,21 @@ namespace ModeloCanonico
             get { return nome; }
             set { nome = value; }
         }
+
+        string cpf;
+
+        public string Cpf
+        {
+            get { return cpf; }
+            set { cpf = value; }
+        }
+
+        string enderecoCompleto;
+
+        public string EnderecoCompleto
+        {
+            get { return enderecoCompleto; }
+            set { enderecoCompleto = value; }
+        }
     }
 }

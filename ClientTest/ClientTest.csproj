@@ -68,6 +68,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReferenceYum\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +135,10 @@
     <None Include="Service References\ServiceReferenceKgb\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReferenceYum\ClientTest.ServiceReferenceYum.UpdateCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceYum\YUMService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,6 +149,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReferenceApt\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceKgb\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceYum\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceKgb\configuration91.svcinfo" />
@@ -174,6 +184,21 @@
       <Project>{5dcccad2-47d5-4a78-b5f4-2860bc4eeab3}</Project>
       <Name>ModeloCanonico</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceYum\YUMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceYum\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceYum\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceYum\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -50,5 +50,24 @@ namespace ClientTest
             RetornoPortabilidade retorno = client.SolicitarPortabilidadeNumerica(custumer);
             textBox2.Text = retorno.Bilhete;
         }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReferenceYum.YUMServiceSoapClient client = new ServiceReferenceYum.YUMServiceSoapClient();
+            ServiceReferenceYum.Custumer customer = new ServiceReferenceYum.Custumer();
+            customer.Nome = "Hermano";
+            customer.Cpf = "99999999999";
+            customer.EnderecoCompleto = "Endereco imcompleto";
+
+            if (client.UpdateCustomer(customer))
+            {
+                textBox3.Text = "Cliente atualizado: "+customer.EnderecoCompleto;
+            } else
+            {
+                textBox3.Text = "Cliente desatualizado!";
+            }
+
+            
+        }
     }
 }

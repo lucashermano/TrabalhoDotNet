@@ -12,7 +12,9 @@
         <Button x:Name="button1" Content="Teste APT" HorizontalAlignment="Left" Margin="47,108,0,0" VerticalAlignment="Top" Width="113" Height="30" Click="button1_Click"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="188,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
         <Button x:Name="button2" Content="Teste Anatel" HorizontalAlignment="Left" Margin="47,163,0,0" VerticalAlignment="Top" Width="113" Height="26" Click="button2_Click"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="188,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="284"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="188,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
+        <Button x:Name="button3" Content="Teste Yum" HorizontalAlignment="Left" Margin="47,221,0,0" VerticalAlignment="Top" Width="113" Height="27" Click="button3_Click"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="188,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="284"/>
 
     </Grid>
 </Window>
