@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using INOVIX.ServiceReferenceYUM;
 
 namespace INOVIX
 {
@@ -19,16 +20,23 @@ namespace INOVIX
          * Metodo chamado da tela.
          * 
          * */
-        public RetornoChamada SolicitaPortabilidade(ModeloCanonico.Custumer custumer)
+        public RetornoChamada SolicitaPortabilidade(ModeloCanonico.Custumer customer)
         {
+            string cpf = customer.Cpf;
             /**
              * Chamada ao YUM*/
+            customer = obterClienteYUM(cpf);
 
 
             /**
-             * Caso chamada ao YUM retorno verdadeiro vamos chamar o KGB/*
+             * Caso chamada ao YUM não encontre o cliente, chamando o kgb
              * */
-            throw new NotImplementedException();
+            if (customer == null)
+            {
+                customer = obterClienteKGB(cpf);
+                //incluindo o cliente na base do yum
+                atualizarClienteYUM(customer);
+            }
 
             /*
              * Depois de chamar o kbg chamamos o APT
@@ -40,7 +48,10 @@ namespace INOVIX
              Pegar o numero do Bilhete que o APT vai me cdevolver e colocar num array custumer e bilhete.
             Manda emnsagem de pedido enviado
             /**/
+
+            return null;
         }
+
 
         /**
          * Recebe a resposta do APT
@@ -58,5 +69,42 @@ namespace INOVIX
             return null;
         }
 
+        private ModeloCanonico.Custumer obterClienteYUM(string cpf)
+        {
+            ServiceReferenceYUM.YUMServiceSoapClient client = new ServiceReferenceYUM.YUMServiceSoapClient();
+            ServiceReferenceYUM.Custumer custumer = client.GetCustomerByCPF(cpf);
+            return converterObjetoCustomerYUM(custumer);
+        }
+
+        private void atualizarClienteYUM(ModeloCanonico.Custumer customer)
+        {
+            ServiceReferenceYUM.YUMServiceSoapClient client = new ServiceReferenceYUM.YUMServiceSoapClient();
+            client.UpdateCustomer(criarObjetoCustomerYUM(customer));
+
+        }
+
+        private ServiceReferenceYUM.Custumer criarObjetoCustomerYUM(ModeloCanonico.Custumer customer)
+        {
+            ServiceReferenceYUM.Custumer novoCustomer = new ServiceReferenceYUM.Custumer();
+            novoCustomer.Cpf = customer.Cpf;
+            novoCustomer.Nome = customer.Nome;
+            novoCustomer.EnderecoCompleto = customer.EnderecoCompleto;
+            return novoCustomer;
+        }
+
+        private ModeloCanonico.Custumer converterObjetoCustomerYUM(ServiceReferenceYUM.Custumer custumer)
+        {
+            ModeloCanonico.Custumer novoCliente = new ModeloCanonico.Custumer();
+            novoCliente.Cpf = custumer.Cpf;
+            novoCliente.Nome = custumer.Nome;
+            novoCliente.EnderecoCompleto= custumer.EnderecoCompleto;
+            return novoCliente;
+        }
+
+        private ModeloCanonico.Custumer obterClienteKGB(string cpf)
+        {
+            ServiceReferenceKGB.KgbServiceClient client = new ServiceReferenceKGB.KgbServiceClient();
+            return client.GetCustomerByCPF(cpf);
+        }
     }
 }

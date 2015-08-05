@@ -20,6 +20,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,6 +65,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="InovixService.svc" />
+    <Content Include="Properties\DataSources\ModeloCanonico.Acount.datasource" />
+    <Content Include="Properties\DataSources\ModeloCanonico.Custumer.datasource" />
+    <None Include="Service References\ServiceReferenceKGB\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceKGB\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceKGB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\ServiceReferenceYUM\INOVIX.ServiceReferenceYUM.Custumer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReferenceKGB\br.pucminas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceKGB\ModeloCanonico.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceKGB\service.wsdl" />
+    <None Include="Service References\ServiceReferenceKGB\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceKGB\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceYUM\YUMService.disco" />
+    <None Include="Service References\ServiceReferenceYUM\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceYUM\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceYUM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -74,6 +110,16 @@
     </Compile>
     <Compile Include="IInovixService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReferenceKGB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceYUM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -83,6 +129,16 @@
       <Project>{5DCCCAD2-47D5-4A78-B5F4-2860BC4EEAB3}</Project>
       <Name>ModeloCanonico</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceKGB\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceYUM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceYUM\YUMService.wsdl" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -106,7 +162,6 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-          <EnableWcfTestClientForSVCDefaultValue>True</EnableWcfTestClientForSVCDefaultValue>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

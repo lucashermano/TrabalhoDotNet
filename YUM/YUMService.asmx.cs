@@ -12,6 +12,24 @@ namespace YUM
     public class YUMService : System.Web.Services.WebService
     {
         [WebMethod]
+        public Custumer GetCustomerByCPF(string cpf)
+        {
+            if (cpf.Equals("04986491644"))
+            {
+                return null;
+            }
+            else
+            {
+                Custumer customer = new Custumer();
+                customer.Cpf = cpf;
+                customer.Nome = "Teste " + cpf;
+                customer.EnderecoCompleto = "Rua sem nome, número 0";
+                return customer;
+            }
+        }
+
+
+        [WebMethod]
         public Boolean UpdateCustomer(Custumer customer)
         {
             //validar dados do cliente

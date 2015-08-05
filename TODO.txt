@@ -1,23 +1,33 @@
-Trabalho Final
-ï Para cada serviÁo, dever„o ser criados os seguintes documentos:
+ÔªøTrabalho Final
+‚Ä¢ Para cada servi√ßo, dever√£o ser criados os seguintes documentos:
 
-ï DET - Documento de EspecificaÁ„o TÈcnica
-ï Contendo o WSDL do serviÁo
-ï ExplicaÁ„o tÈcnica
-ï ExplicaÁ„o de possÌveis retornos de cÛdigos de erro
-
-
-ï DET - Documento de EvidÍncia de Teste
-ï Documento contendo cen·rios de sucesso e erro de cada serviÁo/operaÁ„o
-ï Anexar payload utilizado nos cen·rios
+‚Ä¢ DET - Documento de Especifica√ß√£o T√©cnica
+‚Ä¢ Contendo o WSDL do servi√ßo
+‚Ä¢ Explica√ß√£o t√©cnica
+‚Ä¢ Explica√ß√£o de poss√≠veis retornos de c√≥digos de erro
 
 
-ï DEF - Documento de EspecificaÁ„o Funcional
-ï ExplicaÁ„o funcional do comportamento do serviÁo/operaÁ„o.
+‚Ä¢ DET - Documento de Evid√™ncia de Teste
+‚Ä¢ Documento contendo cen√°rios de sucesso e erro de cada servi√ßo/opera√ß√£o
+‚Ä¢ Anexar payload utilizado nos cen√°rios
 
 
-Desenhe atravÈs do software Bizagi
-ï O fluxo de volta do bilhete de portabilidade com a janela.
-ï O processo de habilitaÁ„o na operadora de destino e origem.
-ï Implemente os serviÁos para tal.
-ï Deixe os canÙnicos mais simples, apenas para exemplificaÁ„o.
+‚Ä¢ DEF - Documento de Especifica√ß√£o Funcional
+‚Ä¢ Explica√ß√£o funcional do comportamento do servi√ßo/opera√ß√£o.
+
+
+Desenhe atrav√©s do software Bizagi
+‚Ä¢ O fluxo de volta do bilhete de portabilidade com a janela.
+‚Ä¢ O processo de habilita√ß√£o na operadora de destino e origem.
+‚Ä¢ Implemente os servi√ßos para tal.
+‚Ä¢ Deixe os can√¥nicos mais simples, apenas para exemplifica√ß√£o.
+
+
+
+‚óè YUM ‚Äì Legado respons√°vel por manter dados de cadastro de pessoas de vendas realizadas por telefone
+[SAP].
+‚óè APT ‚Äì Legado respons√°vel por realizar a comunica√ß√£o entre a operadora de telefonia e a ANATEL
+durante o processo de solicita√ß√£o de portabilidade [JAVA].
+‚óè KGB ‚Äì Legado respons√°vel por manter dados de cobran√ßa e tramita√ß√£o de informa√ß√µes de venda,
+pedidos, n√∫meros, etc (Exceto dados do cliente, j√° mantidos pelo Legado YUM) [COBOL].
+
