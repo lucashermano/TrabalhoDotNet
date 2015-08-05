@@ -29,7 +29,7 @@ namespace KGB
         private void validarCliente(string cpf)
         {
             //[validação de digito verificador do cpf]
-            if (validarCPF(cpf))
+            if (Util.validarCPF(cpf))
             {
                 PortabilidadeFault falha = new PortabilidadeFault();
                 falha.CodigoErro = "01";
@@ -79,51 +79,32 @@ namespace KGB
             //• Validar se o dado é válido
             //• Customer obrigatório
             //• Usar WCF
-            throw new NotImplementedException();
+            validarCliente(customer.Cpf);
+
+            validarConta(customer);
+
+            Acount conta = new Acount();
+            conta.Number = "88433503";
+            conta.Valor = 10;
+            conta.DataUltimoVencimento = new DateTime(2015, 1, 1);
+            conta.Paga = false;
+
+            return conta;
         }
 
-        public bool validarCPF(string CPF)
+        private void validarConta(Custumer customer)
         {
-            int[] mt1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            int[] mt2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
-            string TempCPF;
-            string Digito;
-            int soma;
-            int resto;
-
-            CPF = CPF.Trim();
-            CPF = CPF.Replace(".", "").Replace("-", "");
-
-            if (CPF.Length != 11)
-                return false;
-
-            TempCPF = CPF.Substring(0, 9);
-            soma = 0;
-            for (int i = 0; i < 9; i++)
-                soma += int.Parse(TempCPF[i].ToString()) * mt1[i];
-
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-
-            Digito = resto.ToString();
-            TempCPF = TempCPF + Digito;
-            soma = 0;
-
-            for (int i = 0; i < 10; i++)
-                soma += int.Parse(TempCPF[i].ToString()) * mt2[i];
-
-            resto = soma % 11;
-            if (resto < 2)
-                resto = 0;
-            else
-                resto = 11 - resto;
-
-            Digito = Digito + resto.ToString();
-
-            return CPF.EndsWith(Digito);
+            //validacao se o cliente possui conta
+            if (customer.Cpf.Equals("65290704191"))
+            {
+                PortabilidadeFault falha = new PortabilidadeFault();
+                falha.CodigoErro = "04";
+                falha.DataErro = DateTime.Now;
+                falha.Motivo = "Cliente não possui conta.";
+                throw new FaultException<PortabilidadeFault>(falha);
+            }
         }
+
+
     }
 }

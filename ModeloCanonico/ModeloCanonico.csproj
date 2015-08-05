@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acount.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="PortabilidadeFault.cs" />
     <Compile Include="Custumer.cs" />
     <Compile Include="Portability.cs" />

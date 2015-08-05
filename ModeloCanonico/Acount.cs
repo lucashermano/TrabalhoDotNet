@@ -31,8 +31,8 @@ namespace ModeloCanonico
 
         public DateTime DataUltimoVencimento
         {
-            get { return DataUltimoVencimento; }
-            set { DataUltimoVencimento = value; }
+            get { return dataUltimoVencimento; }
+            set { dataUltimoVencimento = value; }
         }
 
         //indica se a conta está paga
