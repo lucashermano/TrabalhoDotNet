@@ -21,6 +21,14 @@ namespace ModeloCanonico
             set { bilhete = value; }
         }
 
+        string janela;
+
+        public string Janela
+        {
+            get { return janela; }
+            set { janela = value; }
+        }
+
         string motivo;
 
         public string Motivo

@@ -1,23 +1,23 @@
 Trabalho Final
 • Para cada serviço, deverão ser criados os seguintes documentos:
+
 • DET - Documento de Especificação Técnica
 • Contendo o WSDL do serviço
 • Explicação técnica
 • Explicação de possíveis retornos de códigos de erro
+
+
 • DET - Documento de Evidência de Teste
-• Documento contendo cenários de sucesso e erro de cada
-serviço/operação
+• Documento contendo cenários de sucesso e erro de cada serviço/operação
 • Anexar payload utilizado nos cenários
+
+
 • DEF - Documento de Especificação Funcional
-• Explicação funcional do comportamento do serviço/
-operação.
+• Explicação funcional do comportamento do serviço/operação.
 
 
 Desenhe através do software Bizagi
-• O fluxo de volta do bilhete de portabilidade
-com a janela.
-• O processo de habilitação na operadora
-de destino e origem.
+• O fluxo de volta do bilhete de portabilidade com a janela.
+• O processo de habilitação na operadora de destino e origem.
 • Implemente os serviços para tal.
-• Deixe os canônicos mais simples, apenas
-para exemplificação.
+• Deixe os canônicos mais simples, apenas para exemplificação.
