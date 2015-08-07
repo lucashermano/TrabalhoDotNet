@@ -13,7 +13,7 @@ namespace Anatel
             retorno.Janela = DateTime.Now.AddHours(2).ToLongTimeString();
             retorno.CodigoErro = "0";
             retorno.DataErro = DateTime.Now;
-            retorno.Motivo = "Portabilidade efetuada com sucesso.";
+            retorno.Motivo = "Criação do bilhete efetuada com sucesso.";
 
             //[validação se já existe um ticket aberto para essa pessoa]
             if (custumer.Cpf.Equals("04986491644"))

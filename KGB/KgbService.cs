@@ -39,7 +39,7 @@ namespace KGB
             }
 
             //[validação se o cliente existe na base de dados]
-            if (cpf.Equals("04986491644"))
+            if (cpf.Equals("88888888888"))
             {
                 PortabilidadeFault falha = new PortabilidadeFault();
                 falha.CodigoErro = "02";

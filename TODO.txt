@@ -31,3 +31,48 @@ durante o processo de solicitação de portabilidade [JAVA].
 ● KGB – Legado responsável por manter dados de cobrança e tramitação de informações de venda,
 pedidos, números, etc (Exceto dados do cliente, já mantidos pelo Legado YUM) [COBOL].
 
+
+
+
+
+
+
+
+====== Mapeando os codigos de erro de cada projeto ====== 
+
+## ANATEL ## 
+* Mensagem 00 - Criação do bilhete efetuada com sucesso.
+Teste usado: passar qualquer cpf diferente dos utilizados nas mensagens 01 e 02.
+
+* Mensagem 01 - Já existe um processo de portabilidade em aberto para o CPF 
+Teste usado: passar o cpf 04986491644
+
+* Mensagem 02 - Existe uma portabilidade (Número do bilhete: 0987654321) com pendencias para o CPF 
+Teste usado: passar o cpf 05666561677
+
+## APT ## 
+OBSERVAÇÃO: replica as duas mensagem 02 e 03 do projeto Anatel como FaultException<PortabilidadeFault>
+Verificar adição de mensagem caso o sistema Anatel não estiver disponível
+
+
+## KGB ## 
+* Mensagem 01: CPF inválido.
+Teste usado: passar um número aleatorio que seja um cpf inválido (dígito verificador inválido)
+Métodos que utilizam: todos
+
+* Mensagem 02: Cliente inexistente na base de dados.
+Teste usado: passar o cpf 88888888888
+Métodos que utilizam: todos
+
+* Mensagem 03: Cliente possui pendências com o financeiro.
+Teste usado: passar o cpf 22785426649
+Métodos que utilizam: todos
+
+* Mensagem 04: Cliente não possui conta.
+Teste usado: 65290704191
+Métodos que utilizam: ObterDadosConta
+
+
+
+
+
