@@ -73,6 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TesteUnitarioServiceApt.xaml.cs">
+      <DependentUpon>TesteUnitarioServiceApt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TesteUnitarioServiceAnatel.xaml.cs">
       <DependentUpon>TesteUnitarioServiceAnatel.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TesteUnitarioServiceApt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TesteUnitarioServiceAnatel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
