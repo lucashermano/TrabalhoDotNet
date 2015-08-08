@@ -15,8 +15,19 @@ namespace PortabilidadeHOST
             iniciarServicoAnatel();
             iniciarServicoAPT();
             iniciarServicoKGB();
+            //TODO verificar erro na inicialização do serviço do inovix
+            //iniciarServicoInovix();
             Console.Read();
 
+        }
+
+        private static void iniciarServicoInovix()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(INOVIX.InovixService)))
+            {
+                host.Open();
+                Console.WriteLine("Serviço Inovix iniciado @ " + DateTime.Now);
+            }
         }
 
         private static void iniciarServicoKGB()

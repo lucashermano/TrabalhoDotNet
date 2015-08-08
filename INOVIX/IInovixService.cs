@@ -11,16 +11,16 @@ namespace INOVIX
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IInovixService
+    public interface InovixService
     {
 
         [OperationContract]
         RetornoChamada SolicitaPortabilidade(Custumer custumer);
 
-        RetornoChamada ReceberRespostaAnatel(IAsyncResult asyncResult);
+        [OperationContract(AsyncPattern = false)]
+        IAsyncResult BeginObterRespostaAnatel(Custumer customer, Acount conta, AsyncCallback callback, object state);
 
-        [OperationContract(AsyncPattern = true)]
-        IAsyncResult ObterRespostaAnatel(Custumer customer, AsyncCallback callback, object state);
+        RetornoChamada EndReceberRespostaAnatel(IAsyncResult asyncResult);
     }
 
 

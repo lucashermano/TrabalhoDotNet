@@ -63,6 +63,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReferenceInovix\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReferenceKgb\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TesteUnitarioServiceInovix.xaml.cs">
+      <DependentUpon>TesteUnitarioServiceInovix.xaml</DependentUpon>
     </Compile>
     <Compile Include="TesteUnitarioServiceYum.xaml.cs">
       <DependentUpon>TesteUnitarioServiceYum.xaml</DependentUpon>
@@ -97,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TesteUnitarioServiceInovix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TesteUnitarioServiceYum.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -153,6 +165,25 @@
     <None Include="Service References\ServiceReferenceApt\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReferenceInovix\ClientTest.ServiceReferenceInovix.RetornoChamada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\InovixService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\InovixService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\InovixService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\InovixService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\InovixService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceInovix\Service1.wsdl" />
     <None Include="Service References\ServiceReferenceKgb\br.pucminas.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -185,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReferenceApt\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceInovix\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceKgb\" />
     <WCFMetadataStorage Include="Service References\ServiceReferenceYum\" />
   </ItemGroup>
@@ -233,6 +265,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReferenceYum\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceInovix\InovixService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceInovix\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceInovix\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReferenceInovix\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

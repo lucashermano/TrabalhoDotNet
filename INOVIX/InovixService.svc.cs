@@ -13,7 +13,7 @@ using System.Threading;
 namespace INOVIX
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    public class Service1 : IInovixService
+    public class Service1 : InovixService
     {
 
         private ModeloCanonico.Custumer customerGlobal;
@@ -49,31 +49,28 @@ namespace INOVIX
 
             object state = conta;
 
-            var task = Task<RetornoChamada>.Factory.FromAsync(ObterRespostaAnatel, ReceberRespostaAnatel, customer, state);
-
-
-            RetornoChamada retorno = new RetornoChamada();
-
-            return null;
-        }
-
-        /**
-         * Recebe a resposta do APT
-         * */
-        public RetornoChamada ReceberRespostaAnatel(IAsyncResult asyncResult)
-        {
-            return ((Task<RetornoChamada>)asyncResult).Result;
+            var task = Task<RetornoChamada>.Factory.FromAsync(BeginObterRespostaAnatel, EndReceberRespostaAnatel, customer, conta, state);
+            return task.Result;
         }
 
         #region ISampleTaskAsync Members
         /**Recebe a resposta de erro, chamado se houver erro na chamada do APT
          * ***/
-        public IAsyncResult ObterRespostaAnatel(ModeloCanonico.Custumer customer, AsyncCallback callback, object state)
+        public IAsyncResult BeginObterRespostaAnatel(ModeloCanonico.Custumer customer, Acount contam, AsyncCallback callback, object state)
         {
-            var task = Task<RetornoChamada>.Factory.StartNew(SolicitarBilheteApt, (object)customer);
+            var task = Task<RetornoChamada>.Factory.StartNew(SolicitarBilheteApt, state);
 
             return task.ContinueWith(res => callback(task));
         }
+
+        /**
+        * Recebe a resposta do APT
+        **/
+        public RetornoChamada EndReceberRespostaAnatel(IAsyncResult asyncResult)
+        {
+            return ((Task<RetornoChamada>)asyncResult).Result;
+        }
+        #endregion
 
         private RetornoChamada SolicitarBilheteApt(object state)
         {
@@ -87,7 +84,6 @@ namespace INOVIX
             return retorno;
         }
 
-        #endregion
 
     }
 }

@@ -57,6 +57,10 @@
       <Project>{ae6d82c0-0bf2-486b-b05f-5f9a95cab4ab}</Project>
       <Name>APT</Name>
     </ProjectReference>
+    <ProjectReference Include="..\INOVIX\INOVIX.csproj">
+      <Project>{bbdd4ed8-516a-447f-9b10-31679da83153}</Project>
+      <Name>INOVIX</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KGB\KGB.csproj">
       <Project>{79a03dc4-9353-41ea-b6bc-677a435599ee}</Project>
       <Name>KGB</Name>
