@@ -17,15 +17,10 @@ namespace INOVIX
         [OperationContract]
         RetornoChamada SolicitaPortabilidade(Custumer custumer);
 
+        RetornoChamada ReceberRespostaAnatel(IAsyncResult asyncResult);
 
-        [OperationContract]
-        RetornoChamada ReceberRespostaAnatel(RetornoPortabilidade custumer);
-
-
-        [OperationContract]
-        RetornoChamada ObterRespostaAnatel(RetornoPortabilidade custumer);
-
-        // TODO: Add your service operations here
+        [OperationContract(AsyncPattern = true)]
+        IAsyncResult ObterRespostaAnatel(Custumer customer, AsyncCallback callback, object state);
     }
 
 

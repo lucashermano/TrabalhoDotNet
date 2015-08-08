@@ -129,6 +129,7 @@
       <DependentUpon>InovixService.svc</DependentUpon>
     </Compile>
     <Compile Include="IInovixService.cs" />
+    <Compile Include="InovixUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServiceReferenceApt\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -145,6 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SimpleAsyncResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
