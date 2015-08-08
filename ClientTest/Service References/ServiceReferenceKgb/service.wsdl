@@ -36,6 +36,7 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://br.pucminas" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/ModeloCanonico" />
     </xsd:schema>
@@ -46,11 +47,17 @@
   <wsdl:message name="IKgbService_ObterStatusFinanceiroCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObterStatusFinanceiroClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IKgbService_ObterStatusFinanceiroCliente_PortabilidadeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://br.pucminas" name="detail" element="q1:PortabilidadeFault" />
+  </wsdl:message>
   <wsdl:message name="IKgbService_GetCustomerByCPF_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerByCPF" />
   </wsdl:message>
   <wsdl:message name="IKgbService_GetCustomerByCPF_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerByCPFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKgbService_GetCustomerByCPF_PortabilidadeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://br.pucminas" name="detail" element="q2:PortabilidadeFault" />
   </wsdl:message>
   <wsdl:message name="IKgbService_ObterDadosConta_InputMessage">
     <wsdl:part name="parameters" element="tns:ObterDadosConta" />
@@ -58,18 +65,24 @@
   <wsdl:message name="IKgbService_ObterDadosConta_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObterDadosContaResponse" />
   </wsdl:message>
+  <wsdl:message name="IKgbService_ObterDadosConta_PortabilidadeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://br.pucminas" name="detail" element="q3:PortabilidadeFault" />
+  </wsdl:message>
   <wsdl:portType name="IKgbService">
     <wsdl:operation name="ObterStatusFinanceiroCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroCliente" message="tns:IKgbService_ObterStatusFinanceiroCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroClienteResponse" message="tns:IKgbService_ObterStatusFinanceiroCliente_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroClientePortabilidadeFaultFault" name="PortabilidadeFaultFault" message="tns:IKgbService_ObterStatusFinanceiroCliente_PortabilidadeFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByCPF">
       <wsdl:input wsaw:Action="http://tempuri.org/IKgbService/GetCustomerByCPF" message="tns:IKgbService_GetCustomerByCPF_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKgbService/GetCustomerByCPFResponse" message="tns:IKgbService_GetCustomerByCPF_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKgbService/GetCustomerByCPFPortabilidadeFaultFault" name="PortabilidadeFaultFault" message="tns:IKgbService_GetCustomerByCPF_PortabilidadeFaultFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObterDadosConta">
       <wsdl:input wsaw:Action="http://tempuri.org/IKgbService/ObterDadosConta" message="tns:IKgbService_ObterDadosConta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IKgbService/ObterDadosContaResponse" message="tns:IKgbService_ObterDadosConta_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IKgbService/ObterDadosContaPortabilidadeFaultFault" name="PortabilidadeFaultFault" message="tns:IKgbService_ObterDadosConta_PortabilidadeFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IKgbService" type="tns:IKgbService">
@@ -84,6 +97,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="PortabilidadeFaultFault">
+        <soap12:fault use="literal" name="PortabilidadeFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByCPF">
       <soap12:operation soapAction="http://tempuri.org/IKgbService/GetCustomerByCPF" style="document" />
@@ -93,6 +109,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="PortabilidadeFaultFault">
+        <soap12:fault use="literal" name="PortabilidadeFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObterDadosConta">
       <soap12:operation soapAction="http://tempuri.org/IKgbService/ObterDadosConta" style="document" />
@@ -102,6 +121,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="PortabilidadeFaultFault">
+        <soap12:fault use="literal" name="PortabilidadeFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="KgbService">

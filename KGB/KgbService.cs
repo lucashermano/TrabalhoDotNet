@@ -29,7 +29,7 @@ namespace KGB
         private void validarCliente(string cpf)
         {
             //[validação de digito verificador do cpf]
-            if (Util.validarCPF(cpf))
+            if (!Util.validarCPF(cpf))
             {
                 PortabilidadeFault falha = new PortabilidadeFault();
                 falha.CodigoErro = "01";

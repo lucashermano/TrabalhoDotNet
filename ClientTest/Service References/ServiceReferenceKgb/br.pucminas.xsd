@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://br.pucminas" elementFormDefault="qualified" targetNamespace="http://br.pucminas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PortabilidadeFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoErro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataErro" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortabilidadeFault" nillable="true" type="tns:PortabilidadeFault" />
+</xs:schema>

@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="51c685ac-462d-4fa5-b8f8-6684dcc70138" SourceId="1" SourceUrl="net.tcp://localhost:8523/KgbService/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="1e904c1a-9aba-4be0-9cc0-f64c578d2e0a" SourceId="1" SourceUrl="net.tcp://localhost:8523/KgbService/mex" />
     <MetadataFile FileName="ModeloCanonico.xsd" MetadataType="Schema" ID="e9e0b241-dad2-495f-b2c3-0acc5298df54" SourceId="1" SourceUrl="net.tcp://localhost:8523/KgbService/mex" />
+    <MetadataFile FileName="br.pucminas.xsd" MetadataType="Schema" ID="3838997a-3a26-48f4-ae81-b6e1436f71d8" SourceId="1" SourceUrl="net.tcp://localhost:8523/KgbService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -4,7 +4,7 @@
   <xs:element name="ObterStatusFinanceiroCliente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" name="cpf" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -18,7 +18,7 @@
   <xs:element name="GetCustomerByCPF">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="1" name="cpf" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -32,7 +32,7 @@
   <xs:element name="ObterDadosConta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModeloCanonico" minOccurs="0" name="customer" nillable="true" type="q3:Custumer" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ModeloCanonico" minOccurs="1" name="customer" nillable="true" type="q3:Custumer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

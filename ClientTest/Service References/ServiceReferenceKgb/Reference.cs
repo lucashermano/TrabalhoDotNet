@@ -16,18 +16,22 @@ namespace ClientTest.ServiceReferenceKgb {
     public interface IKgbService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroCliente", ReplyAction="http://tempuri.org/IKgbService/ObterStatusFinanceiroClienteResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ModeloCanonico.PortabilidadeFault), Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroClientePortabilidadeFaultFaul" +
+            "t", Name="PortabilidadeFault", Namespace="http://br.pucminas")]
         ModeloCanonico.Custumer ObterStatusFinanceiroCliente(string cpf);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/ObterStatusFinanceiroCliente", ReplyAction="http://tempuri.org/IKgbService/ObterStatusFinanceiroClienteResponse")]
         System.Threading.Tasks.Task<ModeloCanonico.Custumer> ObterStatusFinanceiroClienteAsync(string cpf);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/GetCustomerByCPF", ReplyAction="http://tempuri.org/IKgbService/GetCustomerByCPFResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ModeloCanonico.PortabilidadeFault), Action="http://tempuri.org/IKgbService/GetCustomerByCPFPortabilidadeFaultFault", Name="PortabilidadeFault", Namespace="http://br.pucminas")]
         ModeloCanonico.Custumer GetCustomerByCPF(string cpf);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/GetCustomerByCPF", ReplyAction="http://tempuri.org/IKgbService/GetCustomerByCPFResponse")]
         System.Threading.Tasks.Task<ModeloCanonico.Custumer> GetCustomerByCPFAsync(string cpf);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/ObterDadosConta", ReplyAction="http://tempuri.org/IKgbService/ObterDadosContaResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ModeloCanonico.PortabilidadeFault), Action="http://tempuri.org/IKgbService/ObterDadosContaPortabilidadeFaultFault", Name="PortabilidadeFault", Namespace="http://br.pucminas")]
         ModeloCanonico.Acount ObterDadosConta(ModeloCanonico.Custumer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKgbService/ObterDadosConta", ReplyAction="http://tempuri.org/IKgbService/ObterDadosContaResponse")]
