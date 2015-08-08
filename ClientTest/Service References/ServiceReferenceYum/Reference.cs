@@ -94,12 +94,87 @@ namespace ClientTest.ServiceReferenceYum {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://br.pucminas/", ConfigurationName="ServiceReferenceYum.YUMServiceSoap")]
     public interface YUMServiceSoap {
         
+        // CODEGEN: Generating message contract since element name cpf from namespace http://br.pucminas/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://br.pucminas/GetCustomerByCPF", ReplyAction="*")]
+        ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse GetCustomerByCPF(ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://br.pucminas/GetCustomerByCPF", ReplyAction="*")]
+        System.Threading.Tasks.Task<ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse> GetCustomerByCPFAsync(ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest request);
+        
         // CODEGEN: Generating message contract since element name customer from namespace http://br.pucminas/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://br.pucminas/UpdateCustomer", ReplyAction="*")]
         ClientTest.ServiceReferenceYum.UpdateCustomerResponse UpdateCustomer(ClientTest.ServiceReferenceYum.UpdateCustomerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://br.pucminas/UpdateCustomer", ReplyAction="*")]
         System.Threading.Tasks.Task<ClientTest.ServiceReferenceYum.UpdateCustomerResponse> UpdateCustomerAsync(ClientTest.ServiceReferenceYum.UpdateCustomerRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCustomerByCPFRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCustomerByCPF", Namespace="http://br.pucminas/", Order=0)]
+        public ClientTest.ServiceReferenceYum.GetCustomerByCPFRequestBody Body;
+        
+        public GetCustomerByCPFRequest() {
+        }
+        
+        public GetCustomerByCPFRequest(ClientTest.ServiceReferenceYum.GetCustomerByCPFRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://br.pucminas/")]
+    public partial class GetCustomerByCPFRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string cpf;
+        
+        public GetCustomerByCPFRequestBody() {
+        }
+        
+        public GetCustomerByCPFRequestBody(string cpf) {
+            this.cpf = cpf;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetCustomerByCPFResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCustomerByCPFResponse", Namespace="http://br.pucminas/", Order=0)]
+        public ClientTest.ServiceReferenceYum.GetCustomerByCPFResponseBody Body;
+        
+        public GetCustomerByCPFResponse() {
+        }
+        
+        public GetCustomerByCPFResponse(ClientTest.ServiceReferenceYum.GetCustomerByCPFResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://br.pucminas/")]
+    public partial class GetCustomerByCPFResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ClientTest.ServiceReferenceYum.Custumer GetCustomerByCPFResult;
+        
+        public GetCustomerByCPFResponseBody() {
+        }
+        
+        public GetCustomerByCPFResponseBody(ClientTest.ServiceReferenceYum.Custumer GetCustomerByCPFResult) {
+            this.GetCustomerByCPFResult = GetCustomerByCPFResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -195,6 +270,31 @@ namespace ClientTest.ServiceReferenceYum {
         
         public YUMServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse ClientTest.ServiceReferenceYum.YUMServiceSoap.GetCustomerByCPF(ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest request) {
+            return base.Channel.GetCustomerByCPF(request);
+        }
+        
+        public ClientTest.ServiceReferenceYum.Custumer GetCustomerByCPF(string cpf) {
+            ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest inValue = new ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest();
+            inValue.Body = new ClientTest.ServiceReferenceYum.GetCustomerByCPFRequestBody();
+            inValue.Body.cpf = cpf;
+            ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse retVal = ((ClientTest.ServiceReferenceYum.YUMServiceSoap)(this)).GetCustomerByCPF(inValue);
+            return retVal.Body.GetCustomerByCPFResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse> ClientTest.ServiceReferenceYum.YUMServiceSoap.GetCustomerByCPFAsync(ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest request) {
+            return base.Channel.GetCustomerByCPFAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse> GetCustomerByCPFAsync(string cpf) {
+            ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest inValue = new ClientTest.ServiceReferenceYum.GetCustomerByCPFRequest();
+            inValue.Body = new ClientTest.ServiceReferenceYum.GetCustomerByCPFRequestBody();
+            inValue.Body.cpf = cpf;
+            return ((ClientTest.ServiceReferenceYum.YUMServiceSoap)(this)).GetCustomerByCPFAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

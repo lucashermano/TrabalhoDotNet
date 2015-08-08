@@ -22,6 +22,7 @@ namespace INOVIX
          * */
         public RetornoChamada SolicitaPortabilidade(ModeloCanonico.Custumer customer)
         {
+            Acount conta = null;
             string cpf = customer.Cpf;
             /**
              * Chamada ao YUM*/
@@ -38,19 +39,24 @@ namespace INOVIX
                 atualizarClienteYUM(customer);
             }
 
-            /*
-             * Depois de chamar o kbg chamamos o APT
+            conta = obterDadosContaKGB(customer);
 
-           
-             * Caso nao falhe:
-             * Chamar o APT SolicitarBilhetePortabilidade
-             
-             Pegar o numero do Bilhete que o APT vai me cdevolver e colocar num array custumer e bilhete.
-            Manda emnsagem de pedido enviado
-            /**/
+            ServiceReferenceApt.AptServiceClient aptClient = new ServiceReferenceApt.AptServiceClient();
+
+            Portability portabilidade = aptClient.SolicitarBilhetePortabilidade(customer, conta);
+
+            RetornoChamada retorno = new RetornoChamada();
+            retorno.
 
             return null;
         }
+
+        private Acount obterDadosContaKGB(ModeloCanonico.Custumer customer)
+        {
+            ServiceReferenceKGB.KgbServiceClient client = new ServiceReferenceKGB.KgbServiceClient();
+            return client.ObterDadosConta(customer);
+        }
+
 
 
         /**

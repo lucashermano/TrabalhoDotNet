@@ -53,17 +53,17 @@ namespace YUM
         {
             if (customer.Cpf == null)
             {
-                throw new Exception("CPF inválido.");
+                throw new Exception("CPF obrigatorio.");
             }
 
             if (customer.Nome == null)
             {
-                throw new Exception("Nome inválido.");
+                throw new Exception("Nome obrigatorio.");
             }
 
             if (customer.EnderecoCompleto == null)
             {
-                throw new Exception("Endereço inválido.");
+                throw new Exception("Endereço obrigatorio.");
             }
 
         }

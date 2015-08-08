@@ -2,10 +2,17 @@
 <wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://br.pucminas/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://br.pucminas/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://br.pucminas/">
-      <s:element name="UpdateCustomer">
+      <s:element name="GetCustomerByCPF">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Custumer" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerByCPFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerByCPFResult" type="tns:Custumer" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -16,6 +23,13 @@
           <s:element minOccurs="0" maxOccurs="1" name="EnderecoCompleto" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="UpdateCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Custumer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="UpdateCustomerResponse">
         <s:complexType>
           <s:sequence>
@@ -25,6 +39,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetCustomerByCPFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCPF" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerByCPFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerByCPFResponse" />
+  </wsdl:message>
   <wsdl:message name="UpdateCustomerSoapIn">
     <wsdl:part name="parameters" element="tns:UpdateCustomer" />
   </wsdl:message>
@@ -32,6 +52,10 @@
     <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
   </wsdl:message>
   <wsdl:portType name="YUMServiceSoap">
+    <wsdl:operation name="GetCustomerByCPF">
+      <wsdl:input message="tns:GetCustomerByCPFSoapIn" />
+      <wsdl:output message="tns:GetCustomerByCPFSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="UpdateCustomer">
       <wsdl:input message="tns:UpdateCustomerSoapIn" />
       <wsdl:output message="tns:UpdateCustomerSoapOut" />
@@ -39,6 +63,15 @@
   </wsdl:portType>
   <wsdl:binding name="YUMServiceSoap" type="tns:YUMServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustomerByCPF">
+      <soap:operation soapAction="http://br.pucminas/GetCustomerByCPF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateCustomer">
       <soap:operation soapAction="http://br.pucminas/UpdateCustomer" style="document" />
       <wsdl:input>
@@ -51,6 +84,15 @@
   </wsdl:binding>
   <wsdl:binding name="YUMServiceSoap12" type="tns:YUMServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCustomerByCPF">
+      <soap12:operation soapAction="http://br.pucminas/GetCustomerByCPF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateCustomer">
       <soap12:operation soapAction="http://br.pucminas/UpdateCustomer" style="document" />
       <wsdl:input>

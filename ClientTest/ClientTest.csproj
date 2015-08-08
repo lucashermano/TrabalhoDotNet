@@ -73,6 +73,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TesteUnitarioServiceYum.xaml.cs">
+      <DependentUpon>TesteUnitarioServiceYum.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TesteUnitarioServiceKgb.xaml.cs">
       <DependentUpon>TesteUnitarioServiceKgb.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TesteUnitarioServiceYum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TesteUnitarioServiceKgb.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -158,6 +165,12 @@
     </None>
     <None Include="Service References\ServiceReferenceKgb\service1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceYum\ClientTest.ServiceReferenceYum.Custumer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReferenceYum\ClientTest.ServiceReferenceYum.GetCustomerByCPFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReferenceYum\ClientTest.ServiceReferenceYum.UpdateCustomerResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
