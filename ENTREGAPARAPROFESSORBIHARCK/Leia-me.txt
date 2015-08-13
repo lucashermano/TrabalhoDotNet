@@ -1,0 +1,45 @@
+Biharck,
+    bom dia. Segue em anexo o trabalho final da disciplina de Arquitetura de Software no Ambiente .NET.
+
+
+
+O trabalho está com uma pendencia de ativar o método assincrono no projeto INOVIX pois não sei porque ele não aceita a assinatura de método que eu criei na inicialização do serviço:
+
+[InvalidOperationException: OperationContract method 'BeginObterRespostaAnatel' in type 'INOVIX.InovixService' does not properly implement the async pattern, as no corresponding method 'EndObterRespostaAnatel' could be found. Either provide a method called 'EndObterRespostaAnatel' or set the AsyncPattern property on method 'BeginObterRespostaAnatel' to false.]
+
+
+Vi numa thread do stackoverflow que deveria mudar o nome dos métodos para iniciar com Begin e End mas mesmo assim não surtiu efeito.
+
+Então alterei o parametro para FALSE para que o serviço iniciasse:
+
+        [OperationContract(AsyncPattern = false)]
+        IAsyncResult BeginObterRespostaAnatel(Custumer customer, Acount conta, AsyncCallback callback, object state);
+
+
+Outra situação que não consegui resolver é que os serviços dos projetos KGB, Apt, Yum e Inovix são iniciados por causa da opção marcada nas propriedades do projeto chamada "WCF Option -> Start WCF Service Host when debugging another project in the same solution". Quando eu desmarco esta opção para tentar iniciar o serviço pelo PortabilidadeHoST, o serviço nunca é iniciado.
+
+
+Os documentos do trabalho são formados pelos seguintes arquivos:
+
+* Modelagem processo Inovix.bpm: arquivo fonte do Bizagi contendo a modelagem do processo de chamada de método entre todos os projetos;
+* Modelagem processo Inovix.jpg: imagem da modelagem no Bizagi;
+* Projeto Final Dot Net - Documento de Especificação Técnica e Funcional.docx: Documento contendo especificação técnica e funcional de todos os serviços contidos nos projetos deste trabalho;
+* Projeto Final Dot Net - Documento de Evidência de Teste.docx: Documento contendo os testes realizados em todos os métodos dos serviços disponíveis nesta solução.
+* TrabalhoDotNet-master.zip: Código-fonte do projeto (Também encontrado no GitHub: https://github.com/lucashermano/TrabalhoDotNet)
+
+
+
+Meu grupo é formado pelos seguintes componentes: 
+
+Anderson Augusto Rodrigo Silva
+Fabrício Dias
+Lucas Hermano
+Rafael Cruz Teixeira
+
+
+
+
+Um abraço.
+
+Att.,
+Lucas Hermano
