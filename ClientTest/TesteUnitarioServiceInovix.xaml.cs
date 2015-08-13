@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using ModeloCanonico;
+using System.ServiceModel;
+using System.Windows;
 
 namespace ClientTest
 {
@@ -42,6 +44,10 @@ namespace ClientTest
             {
                 ServiceReferenceInovix.RetornoChamada retorno = client.SolicitaPortabilidade(customer);
                 textBoxErro01.Text = retorno.StringValue;
+            }
+            catch (FaultException<PortabilidadeFault> erro)
+            {
+                textBoxErro01.Text = "Erro " + erro.Detail.CodigoErro + ": " + erro.Detail.Motivo;
             }
             catch (System.Exception erro)
             {
