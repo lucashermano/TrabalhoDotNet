@@ -16,7 +16,7 @@ namespace PortabilidadeHOST
             iniciarServicoAPT();
             iniciarServicoKGB();
             //TODO verificar erro na inicialização do serviço do inovix
-            //iniciarServicoInovix();
+            iniciarServicoInovix();
             Console.Read();
 
         }

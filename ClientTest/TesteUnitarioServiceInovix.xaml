@@ -12,8 +12,6 @@
         <TextBox x:Name="textBoxSucesso" HorizontalAlignment="Left" Height="40" Margin="134,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="459"/>
         <Button x:Name="buttonErro01" Content="Teste Erro 01" HorizontalAlignment="Left" Margin="31,100,0,0" VerticalAlignment="Top" Width="98" Click="buttonErro01_Click"/>
         <TextBox x:Name="textBoxErro01" HorizontalAlignment="Left" Height="36" Margin="134,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="459"/>
-        <Button x:Name="buttonErro02" Content="Teste Erro 02" HorizontalAlignment="Left" Margin="31,149,0,0" VerticalAlignment="Top" Width="98" Click="buttonErro02_Click"/>
-        <TextBox x:Name="textBoxErro02" HorizontalAlignment="Left" Height="50" Margin="134,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="459"/>
 
     </Grid>
 </Window>

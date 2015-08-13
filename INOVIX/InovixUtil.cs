@@ -12,7 +12,14 @@ namespace INOVIX
         {
             ServiceReferenceYUM.YUMServiceSoapClient client = new ServiceReferenceYUM.YUMServiceSoapClient();
             ServiceReferenceYUM.Custumer custumer = client.GetCustomerByCPF(cpf);
-            return converterObjetoCustomerYUM(custumer);
+            if (custumer != null)
+            {
+                return converterObjetoCustomerYUM(custumer);
+            } else
+            {
+                return null;
+            }
+            
         }
 
         private static ModeloCanonico.Custumer converterObjetoCustomerYUM(ServiceReferenceYUM.Custumer custumer)

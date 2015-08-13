@@ -13,7 +13,7 @@ using System.Threading;
 namespace INOVIX
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    public class Service1 : InovixService
+    public class InovixService : IInovixService
     {
 
         private ModeloCanonico.Custumer customerGlobal;
@@ -74,7 +74,6 @@ namespace INOVIX
 
         private RetornoChamada SolicitarBilheteApt(object state)
         {
-            ModeloCanonico.Custumer custumer = (ModeloCanonico.Custumer)state;
             ServiceReferenceApt.AptServiceClient aptClient = new ServiceReferenceApt.AptServiceClient();
 
             Portability portabilidade = aptClient.SolicitarBilhetePortabilidade(customerGlobal, contaGlobal);

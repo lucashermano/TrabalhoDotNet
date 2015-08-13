@@ -18,7 +18,7 @@ namespace ClientTest
         {
             ServiceReferenceInovix.InovixServiceClient client = new ServiceReferenceInovix.InovixServiceClient();
             ModeloCanonico.Custumer customer = new ModeloCanonico.Custumer();
-            customer.Cpf = "04986491644";
+            customer.Cpf = "70127182772";
 
             try
             {
@@ -34,12 +34,19 @@ namespace ClientTest
 
         private void buttonErro01_Click(object sender, RoutedEventArgs e)
         {
-           
-        }
+            ServiceReferenceInovix.InovixServiceClient client = new ServiceReferenceInovix.InovixServiceClient();
+            ModeloCanonico.Custumer customer = new ModeloCanonico.Custumer();
+            customer.Cpf = "04986491644";
 
-        private void buttonErro02_Click(object sender, RoutedEventArgs e)
-        {
-           
+            try
+            {
+                ServiceReferenceInovix.RetornoChamada retorno = client.SolicitaPortabilidade(customer);
+                textBoxErro01.Text = retorno.StringValue;
+            }
+            catch (System.Exception erro)
+            {
+                textBoxErro01.Text = "Erro na chamada ao serviço inovix: " + erro;
+            }
         }
     }
 }
